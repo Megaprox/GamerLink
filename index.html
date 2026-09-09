@@ -3,35 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CALIBRAR TRIFORCE</title>
+<title>TRIFORCE</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#02010a;color:#fff;font-family:sans-serif}
+html,body{background:#02010a}
 .wrap{position:relative;width:100%;max-width:500px;margin:0 auto;line-height:0}
 .bg{width:100%;display:block}
-.hotspot{position:absolute;display:flex;align-items:center;justify-content:center;border:2px solid #00ffff;background:rgba(0,255,255,0.3);color:#fff;font-size:10px;font-weight:bold}
-.controls{position:fixed;bottom:0;left:0;right:0;background:#111;padding:10px;z-index:100;line-height:1.4}
-.controls label{display:block;margin:4px 0;font-size:12px}
-input[type=range]{width:100%}
-button{padding:10px;width:100%;background:#00ffff;border:none;font-weight:bold;margin-top:8px}
-#out{font-size:10px;word-break:break-all;background:#000;padding:6px;margin-top:6px;max-height:80px;overflow:auto}
+.hotspot{position:absolute;display:block}
+.m-tw{left:5.37%;top:61.61%;width:19.91%;height:4.81%}
+.m-ig{left:28.70%;top:61.61%;width:19.91%;height:4.81%}
+.m-tt{left:52.13%;top:61.61%;width:19.91%;height:4.81%}
+.m-yt{left:74.81%;top:61.61%;width:20.09%;height:4.81%}
+.f-tw{left:5.37%;top:72.96%;width:19.91%;height:4.81%}
+.f-tt{left:28.70%;top:72.96%;width:19.91%;height:4.81%}
+.f-yt{left:52.13%;top:72.96%;width:19.91%;height:4.81%}
+.f-ig{left:74.81%;top:72.96%;width:20.09%;height:4.81%}
+.k-yt{left:5.37%;top:84.47%;width:27.41%;height:5.13%}
+.k-tt{left:36.57%;top:84.47%;width:27.41%;height:5.13%}
+.k-ig{left:66.48%;top:84.47%;width:27.50%;height:5.13%}
 </style>
 </head>
 <body>
-<div class="wrap" id="wrap">
-<img class="bg" src="triforce_bg.jpg" id="bg">
+<div class="wrap">
+<img class="bg" src="triforce_bg.jpg" alt="">
+<a class="hotspot m-tw" href="https://www.twitch.tv/MegaManXter" target="_blank"></a>
+<a class="hotspot m-ig" href="https://www.instagram.com/Lycan_a.g/" target="_blank"></a>
+<a class="hotspot m-tt" href="https://www.tiktok.com/@megamanxter" target="_blank"></a>
+<a class="hotspot m-yt" href="https://www.youtube.com/@MegaManXterGames" target="_blank"></a>
+<a class="hotspot f-tw" href="https://www.twitch.tv/TheFlacillo" target="_blank"></a>
+<a class="hotspot f-tt" href="https://www.tiktok.com/@theflacillo" target="_blank"></a>
+<a class="hotspot f-yt" href="https://www.youtube.com/@TheFlacillo" target="_blank"></a>
+<a class="hotspot f-ig" href="https://www.instagram.com/TheFlacillo/" target="_blank"></a>
+<a class="hotspot k-yt" href="https://www.youtube.com/@kuroi64" target="_blank"></a>
+<a class="hotspot k-tt" href="https://www.tiktok.com/@kuroi64" target="_blank"></a>
+<a class="hotspot k-ig" href="https://www.instagram.com/kuroi64/" target="_blank"></a>
 </div>
-
-<div class="controls">
-<label>MegaMan TOP: <span id="v-m">61.6</span>% <input type="range" id="r-m" min="55" max="68" step="0.05" value="61.61"></label>
-<label>Flacillo TOP: <span id="v-f">72.9</span>% <input type="range" id="r-f" min="67" max="79" step="0.05" value="72.96"></label>
-<label>Kuroi TOP: <span id="v-k">84.4</span>% <input type="range" id="r-k" min="80" max="90" step="0.05" value="84.47"></label>
-<button onclick="generar()">GENERAR CÓDIGO FINAL</button>
-<div id="out"></div>
-</div>
-
-<script>
-const wrap=document.getElementById('wrap');
-const ids=[
-['m-tw',5.37,19.91,'rm'],['m-ig',28.7,19.91,'rm'],['m-tt',52.13,19.91,'rm'],['m-yt',74.81,20.09,'rm'],
-['f-tw',5.37,19.91,'rf'],['f-tt',
+</body>
+</html>
