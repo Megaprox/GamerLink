@@ -3,155 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TRIFORCE | La unión de 3 gamers</title>
+<title>TRIFORCE - La union de 3 gamers</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background:
-    radial-gradient(circle at 50% 10%, rgba(0,120,255,.35), transparent 35%),
-    radial-gradient(circle at 10% 80%, rgba(120,0,255,.25), transparent 35%),
-    radial-gradient(circle at 90% 60%, rgba(0,200,255,.18), transparent 35%),
-    linear-gradient(135deg, #030712, #07152e 45%, #10052b);
-  background-attachment: fixed;
-  color: white;
-  min-height: 100vh;
-}
-.container { max-width: 560px; margin: auto; padding: 28px 18px 40px; text-align: center; }
-.logo {
-  width: 96px; height: 96px; border-radius: 50%; margin: 10px auto 16px;
-  background: linear-gradient(135deg, #1597ff, #5b35ff);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 42px; font-weight: 900;
-  box-shadow: 0 0 30px #1597ff66;
-  position: relative;
-}
-.logo::after{
-  content:''; position:absolute; inset:-3px; border-radius:50%;
-  border:2px solid #00d4ff; filter:blur(1px); opacity:0.6;
-}
-h1 { margin: 0; font-size: 36px; letter-spacing: 3px; font-weight: 900; }
-.subtitle { color: #b9c1d9; margin: 8px 0 6px; letter-spacing: 2px; font-size:14px; }
-.badge {
-  display:inline-block; margin: 12px auto 28px; padding:6px 14px;
-  border:1px solid #2a9bff66; background: #0a1933; border-radius: 20px;
-  font-size:11px; letter-spacing:1.5px; color:#7ec8ff;
-}
-.section { margin-top: 26px; text-align: left; }
-.section h2 {
-  font-size: 16px; margin: 0 0 12px 6px; letter-spacing:1px;
-}
-.section.mega h2{ color:#3dc8ff; }
-.section.fla h2{ color:#ff4a6a; }
-.section.kuroi h2{ color:#c67bff; }
-
-.card {
-  display: flex; align-items:center; justify-content:space-between;
-  text-decoration: none; color: white;
-  background: rgba(23,31,56,0.9);
-  border: 1px solid #2b3758; border-radius: 14px;
-  padding: 13px 16px; margin: 9px 0;
-  font-size: 15px; font-weight: 700;
-  transition:0.2s;
-}
-.card:hover{ transform: translateY(-2px); background:#1c2747; }
-.section.mega .card{ border-color:#00aaff55; box-shadow: 0 0 15px #00aaff22; }
-.section.mega .card:hover{ border-color:#00c8ff; box-shadow: 0 0 20px #00c8ff55; }
-.section.fla .card{ border-color:#ff174455; box-shadow: 0 0 15px #ff174422; }
-.section.fla .card:hover{ border-color:#ff4a6a; box-shadow: 0 0 20px #ff4a6a55; }
-.section.kuroi .card{ border-color:#b400ff55; box-shadow: 0 0 15px #b400ff22; }
-.section.kuroi .card:hover{ border-color:#d07aff; box-shadow: 0 0 20px #b400ff55; }
-
-.card-left{ display:flex; align-items:center; gap:12px; text-align:left; }
-.ico{ width:36px; height:36px; border-radius:8px; display:grid; place-items:center; font-size:18px; }
-.twitch .ico{ background:#9146ff; } .ig .ico{ background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf); }
-.tiktok .ico{ background:#000; border:1px solid #fff; } .yt .ico{ background:#ff0000; }
-
-.small { font-size: 12px; color: #8e99b5; font-weight: 400; margin-top: 2px; }
-
-.qr-wrap{
-  margin-top:32px; background: rgba(0,0,0,0.35); border:1px solid #1e3a5f;
-  border-radius:20px; padding:20px; display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap;
-}
-#qrcode{ background:#fff; padding:8px; border-radius:12px; }
-.qr-txt{ font-size:12px; color:#7ec8ff; font-weight:700; letter-spacing:1px; line-height:1.3; }
-.btns{ display:flex; gap:8px; justify-content:center; margin-top:16px; flex-wrap:wrap; }
-.btn-mini{
-  padding:9px 16px; border-radius:10px; border:1px solid #2b3758; background:#171f38;
-  color:#fff; font-size:12px; cursor:pointer; font-weight:600;
-}
-.btn-mini.gold{ background:#00c8ff; color:#000; border-color:#00c8ff; }
-footer { margin-top: 30px; color: #6f7b98; font-size: 11px; letter-spacing:2px; }
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#05000f}
+.wrap{position:relative;width:100%;max-width:600px;margin:0 auto;line-height:0}
+.wrap .bg{width:100%;height:auto;display:block}
+.hotspot{position:absolute;display:block;cursor:pointer;border-radius:14px}
+.m-tw{left:4.5%;top:45.1%;width:21.5%;height:5.2%}
+.m-ig{left:28%;top:45.1%;width:21.5%;height:5.2%}
+.m-tt{left:51.5%;top:45.1%;width:21.5%;height:5.2%}
+.m-yt{left:75%;top:45.1%;width:21.5%;height:5.2%}
+.f-tw{left:4.5%;top:59.3%;width:21.5%;height:5.2%}
+.f-tt{left:28%;top:59.3%;width:21.5%;height:5.2%}
+.f-yt{left:51.5%;top:59.3%;width:21.5%;height:5.2%}
+.f-ig{left:75%;top:59.3%;width:21.5%;height:5.2%}
+.k-yt{left:4.5%;top:71.2%;width:29%;height:5.5%}
+.k-tt{left:35.5%;top:71.2%;width:29%;height:5.5%}
+.k-ig{left:66.5%;top:71.2%;width:29%;height:5.5%}
+.qr-box{position:absolute;left:50%;top:80.3%;transform:translate(-50%,-50%);width:22%;aspect-ratio:1;background:#fff;border-radius:12px;padding:2%;box-shadow:0 0 20px #00e5ff;display:grid;place-items:center}
+.qr-box canvas{width:100%!important;height:100%!important}
 </style>
 </head>
 <body>
-<div class="container">
-
-<div class="logo">△</div>
-<h1>TRIFORCE</h1>
-<div class="subtitle">La unión de 3 gamers</div>
-<div class="badge">DIFERENTES ESTILOS • MISMA PASIÓN • JUGAMOS • COMPARTIMOS • CRECEMOS</div>
-
-<!-- MEGAMANXTER -->
-<div class="section mega">
-<h2>⚡ Redes de MegaManXter</h2>
-<a class="card" href="https://twitch.tv/MegaManXter" target="_blank"><div class="card-left"><div class="ico twitch">📺</div><div>Twitch<div class="small">MegaManXter</div></div></div>↗</a>
-<a class="card" href="https://instagram.com/Lycan_a.g" target="_blank"><div class="card-left"><div class="ico ig">📸</div><div>Instagram<div class="small">Lycan_a.g</div></div></div>↗</a>
-<a class="card" href="https://tiktok.com/@megamanxter" target="_blank"><div class="card-left"><div class="ico tiktok">🎵</div><div>TikTok<div class="small">@megamanxter</div></div></div>↗</a>
-<a class="card" href="https://youtube.com/@MegaManXterGames" target="_blank"><div class="card-left"><div class="ico yt">▶️</div><div>YouTube<div class="small">@MegaManXterGames</div></div></div>↗</a>
+<div class="wrap">
+<img class="bg" src="triforce_bg.jpg" alt="TRIFORCE">
+<a class="hotspot m-tw" href="https://twitch.tv/MegaManXter" target="_blank"></a>
+<a class="hotspot m-ig" href="https://instagram.com/Lycan_a.g" target="_blank"></a>
+<a class="hotspot m-tt" href="https://tiktok.com/@megamanxter" target="_blank"></a>
+<a class="hotspot m-yt" href="https://youtube.com/@MegaManXterGames" target="_blank"></a>
+<a class="hotspot f-tw" href="https://twitch.tv/TheFlacillo" target="_blank"></a>
+<a class="hotspot f-tt" href="https://tiktok.com/@theflacillo" target="_blank"></a>
+<a class="hotspot f-yt" href="https://youtube.com/@TheFlacillo" target="_blank"></a>
+<a class="hotspot f-ig" href="https://instagram.com/TheFlacillo" target="_blank"></a>
+<a class="hotspot k-yt" href="https://youtube.com/@kuroi64" target="_blank"></a>
+<a class="hotspot k-tt" href="https://tiktok.com/@kuroi64" target="_blank"></a>
+<a class="hotspot k-ig" href="https://instagram.com/kuroi64" target="_blank"></a>
+<div class="qr-box" id="qrcode"></div>
 </div>
-
-<!-- THEFLACILLO -->
-<div class="section fla">
-<h2>🔥 Redes de TheFlacillo</h2>
-<a class="card" href="https://twitch.tv/TheFlacillo" target="_blank"><div class="card-left"><div class="ico twitch">📺</div><div>Twitch<div class="small">TheFlacillo</div></div></div>↗</a>
-<a class="card" href="https://tiktok.com/@theflacillo" target="_blank"><div class="card-left"><div class="ico tiktok">🎵</div><div>TikTok<div class="small">@theflacillo</div></div></div>↗</a>
-<a class="card" href="https://youtube.com/@TheFlacillo" target="_blank"><div class="card-left"><div class="ico yt">▶️</div><div>YouTube<div class="small">@TheFlacillo</div></div></div>↗</a>
-<a class="card" href="https://instagram.com/theflacillo" target="_blank"><div class="card-left"><div class="ico ig">📸</div><div>Instagram<div class="small">@TheFlacillo</div></div></div>↗</a>
-</div>
-
-<!-- KUROI64 -->
-<div class="section kuroi">
-<h2>💜 Redes de Kuroi64</h2>
-<a class="card" href="https://youtube.com/@kuroi64" target="_blank"><div class="card-left"><div class="ico yt">▶️</div><div>YouTube<div class="small">@kuroi64</div></div></div>↗</a>
-<a class="card" href="https://tiktok.com/@kuroi64" target="_blank"><div class="card-left"><div class="ico tiktok">🎵</div><div>TikTok<div class="small">@kuroi64</div></div></div>↗</a>
-<a class="card" href="https://instagram.com/kuroi64" target="_blank"><div class="card-left"><div class="ico ig">📸</div><div>Instagram<div class="small">@kuroi64</div></div></div>↗</a>
-</div>
-
-<div class="qr-wrap">
-<div class="qr-txt">ESCANEA<br>EL QR ➜</div>
-<div id="qrcode"></div>
-<div class="qr-txt">Y ACCEDE<br>A TODAS<br>NUESTRAS REDES</div>
-</div>
-
-<div class="btns">
-<button class="btn-mini gold" onclick="sharePage()">📲 Compartir</button>
-<button class="btn-mini" onclick="copyLink()">📋 Copiar Link</button>
-<button class="btn-mini" onclick="downloadQR()">⬇️ QR</button>
-</div>
-
-<footer>△ △ TRIFORCE △ △<br>La unión de 3 gamers</footer>
-
-</div>
-
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
-const url = window.location.href;
-new QRCode(document.getElementById("qrcode"), {
-  text: url, width: 130, height: 130,
-  colorDark:"#000", colorLight:"#fff",
-  correctLevel: QRCode.CorrectLevel.H
+new QRCode(document.getElementById("qrcode"),{
+ text: "https://megaprox.github.io/GamerLink/",
+ width: 400, height: 400,
+ colorDark:"#000000", colorLight:"#ffffff",
+ correctLevel: QRCode.CorrectLevel.H
 });
-function copyLink(){ navigator.clipboard.writeText(url); alert('¡Link copiado!'); }
-function sharePage(){
-  if(navigator.share){ navigator.share({title:'TRIFORCE', text:'La unión de 3 gamers', url}); }
-  else copyLink();
-}
-function downloadQR(){
-  const c = document.querySelector('#qrcode canvas');
-  if(c){ const a=document.createElement('a'); a.download='TRIFORCE-QR.png'; a.href=c.toDataURL(); a.click(); }
-}
 </script>
 </body>
 </html>
