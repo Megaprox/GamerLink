@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALIBRAR TRIFORCE</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#02010a;color:#fff;font-family:sans-serif}
+.wrap{position:relative;width:100%;max-width:500px;margin:0 auto;line-height:0}
+.bg{width:100%;display:block}
+.hotspot{position:absolute;display:flex;align-items:center;justify-content:center;border:2px solid #00ffff;background:rgba(0,255,255,0.3);color:#fff;font-size:10px;font-weight:bold}
+.controls{position:fixed;bottom:0;left:0;right:0;background:#111;padding:10px;z-index:100;line-height:1.4}
+.controls label{display:block;margin:4px 0;font-size:12px}
+input[type=range]{width:100%}
+button{padding:10px;width:100%;background:#00ffff;border:none;font-weight:bold;margin-top:8px}
+#out{font-size:10px;word-break:break-all;background:#000;padding:6px;margin-top:6px;max-height:80px;overflow:auto}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<img class="bg" src="triforce_bg.jpg" id="bg">
+</div>
+
+<div class="controls">
+<label>MegaMan TOP: <span id="v-m">61.6</span>% <input type="range" id="r-m" min="55" max="68" step="0.05" value="61.61"></label>
+<label>Flacillo TOP: <span id="v-f">72.9</span>% <input type="range" id="r-f" min="67" max="79" step="0.05" value="72.96"></label>
+<label>Kuroi TOP: <span id="v-k">84.4</span>% <input type="range" id="r-k" min="80" max="90" step="0.05" value="84.47"></label>
+<button onclick="generar()">GENERAR CÓDIGO FINAL</button>
+<div id="out"></div>
+</div>
+
+<script>
+const wrap=document.getElementById('wrap');
+const ids=[
+['m-tw',5.37,19.91,'rm'],['m-ig',28.7,19.91,'rm'],['m-tt',52.13,19.91,'rm'],['m-yt',74.81,20.09,'rm'],
+['f-tw',5.37,19.91,'rf'],['f-tt',28.7,19.91,'rf'],['f-yt',52.13,19.91,'rf'],['f-ig',74.81,20.09,'rf'],
+['k-yt',5.37,27.41,'rk'],['k-tt',36.57,27.41,'rk'],['k-ig',66.48,27.5,'rk']
+];
+function draw(){
+  document.querySelectorAll('.hotspot').forEach(e=>e.remove());
+  const m=parseFloat(document.getElementById('r-m').value);
+  const f=parseFloat(document.getElementById('r-f').value);
+  const k=parseFloat(document.getElementById('r-k').value);
+  document.getElementById('v-m').textContent=m.toFixed(2);
+  document.getElementById('v-f').textContent=f.toFixed(2);
+  document.getElementById('v-k').textContent=k.toFixed(2);
+  ids.forEach(([id,l,w,rg])=>{
+    let t=rg=='rm'?m:rg=='rf'?f:k;
+    let h=rg=='rk'?5.13:4.81;
+    const a=document.createElement('div');
+    a.className='hotspot';a.id=id;
+    a.style.left=l+'%';a.style.top=t+'%';a.style.width=w+'%';a.style.height=h+'%';
+    a.textContent=id;
+    wrap.appendChild(a);
+  });
+}
+['r-m','r-f','r-k'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
+draw();
+function generar(){
+  const m=document.getElementById('r-m').value;
+  const f=document.getElementById('r-f').value;
+  const k=document.getElementById('r-k').value;
+  const css=`.m-tw{left:5.37%;top:${m}%;width:19.91%;height:4.81%}\n.m-ig{left:28.70%;top:${m}%;width:19.91%;height:4.81%}\n.m-tt{left:52.13%;top:${m}%;width:19.91%;height:4.81%}\n.m-yt{left:74.81%;top:${m}%;width:20.09%;height:4.81%}\n.f-tw{left:5.37%;top:${f}%;width:19.91%;height:4.81%}\n.f-tt{left:28.70%;top:${f}%;width:19.91%;height:4.81%}\n.f-yt{left:52.13%;top:${f}%;width:19.91%;height:4.81%}\n.f-ig{left:74.81%;top:${f}%;width:20.09%;height:4.81%}\n.k-yt{left:5.37%;top:${k}%;width:27.41%;height:5.13%}\n.k-tt{left:36.57%;top:${k}%;width:27.41%;height:5.13%}\n.k-ig{left:66.48%;top:${k}%;width:27.50%;height:5.13%}`;
+  document.getElementById('out').innerText=css;
+  navigator.clipboard.writeText(css);
+  alert('Código copiado! Ahora pégalo en tu index.html');
+}
+</script>
+</body>
+</html>
