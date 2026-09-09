@@ -21,8 +21,8 @@ html,body{background:#05000f}
 .k-yt{left:4.5%;top:71.2%;width:29%;height:5.5%}
 .k-tt{left:35.5%;top:71.2%;width:29%;height:5.5%}
 .k-ig{left:66.5%;top:71.2%;width:29%;height:5.5%}
-.qr-box{position:absolute;left:50%;top:88%;transform:translate(-50%,-50%);width:19%;aspect-ratio:1;background:#fff;border-radius:8px;padding:1.5%;box-shadow:0 0 15px #00e5ff;display:grid;place-items:center}
-.qr-box canvas{width:100%!important;height:100%!important}
+.qr-box{position:absolute;left:50%;top:88.2%;transform:translate(-50%,-50%);width:19%;aspect-ratio:1;border-radius:6px;overflow:hidden;box-shadow:0 0 15px #00e5ff}
+.qr-box img{width:100%;height:100%;object-fit:cover;display:block}
 </style>
 </head>
 <body>
@@ -39,11 +39,7 @@ html,body{background:#05000f}
 <a class="hotspot k-yt" href="https://youtube.com/@kuroi64" target="_blank"></a>
 <a class="hotspot k-tt" href="https://tiktok.com/@kuroi64" target="_blank"></a>
 <a class="hotspot k-ig" href="https://instagram.com/kuroi64" target="_blank"></a>
-<div class="qr-box" id="qrcode"></div>
+<div class="qr-box"><img src="triforce_qr.png" alt="QR"></div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-<script>
-new QRCode(document.getElementById("qrcode"),{text:"https://megaprox.github.io/GamerLink/",width:400,height:400,colorDark:"#000000",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
-</script>
 </body>
 </html>
