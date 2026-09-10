@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDITOR TRIFORCE</title>
+<style>
+body{margin:0;background:#111;color:#fff;font-family:sans-serif}
+.wrap{position:relative;width:100%;max-width:500px;margin:0 auto;touch-action:none}
+.bg{width:100%;display:block}
+.box{position:absolute;border:2px solid yellow;background:rgba(255,255,0,0.4);display:flex;align-items:center;justify-content:center;font-size:9px;color:#000;font-weight:bold;cursor:move}
+#out{width:100%;max-width:500px;margin:10px auto;background:#222;padding:10px;font-size:11px;white-space:pre-wrap;word-break:break-all}
+button{padding:10px;width:100%;background:#0f0;font-weight:bold;border:0;margin-top:10px}
+</style>
+</head>
+<body>
+<h3 style="text-align:center">Arrastra los cuadros amarillos sobre los botones</h3>
+<div class="wrap" id="wrap">
+<img class="bg" src="triforce_bg.jpg" id="bg">
+</div>
+<div id="out"></div>
+<button onclick="generar()">GENERAR CODIGO FINAL</button>
+<script>
+const datos=[
+{id:'m-tw',x:6,y:56.5,w:20,h:5.2},{id:'m-ig',x:28.2,y:56.5,w:20,h:5.2},{id:'m-tt',x:50.5,y:56.5,w:20,h:5.2},{id:'m-yt',x:72.8,y:56.5,w:21,h:5.2},
+{id:'f-tw',x:6,y:66.8,w:20,h:5.2},{id:'f-tt',x:28.2,y:66.8,w:20,h:5.2},{id:'f-yt',x:50.5,y:66.8,w:20,h:5.2},{id:'f-ig',x:72.8,y:66.8,w:21,h:5.2},
+{id:'k-yt',x:6,y:84.8,w:27,h:5.5},{id:'k-tt',x:36.5,y:84.8,w:27,h:5.5},{id:'k-ig',x:67,y:84.8,w:27,h:5.5},
+];
+const wrap=document.getElementById('wrap');
+datos.forEach(d=>{
+ let div=document.createElement('div');
+ div.className='box'; div.id=d.id; div.textContent=d.id;
+ div.style.left=d.x+'%'; div.style.top=d.y+'%'; div.style.width=d.w+'%'; div.style.height=d.h+'%';
+ wrap.appendChild(div);
+ let sx,sy,ox,oy;
+ div.addEventListener('touchstart',e=>{sx=e.touches[0].clientX; sy=e.touches[0].clientY; ox=parseFloat(div.style.left); oy=parseFloat(div.style.top);});
+ div.addEventListener('touchmove',e=>{
+   e.preventDefault();
+   let dx=(e.touches[0].clientX-sx)/wrap.clientWidth*100;
+   let dy=(e.touches[0].clientY-sy)/wrap.clientHeight*100;
+   div.style.left=(ox+dx)+'%'; div.style.top=(oy+dy)+'%';
+ },{passive:false});
+ div.addEventListener('mousedown',e=>{sx=e.clientX; sy=e.clientY; ox=parseFloat(div.style.left); oy=parseFloat(div.style.top);
+   function mm(ev){div.style.left=(ox+(ev.clientX-sx)/wrap.clientWidth*100)+'%'; div.style.top=(oy+(ev.clientY-sy)/wrap.clientHeight*100)+'%';}
+   function mu(){document.removeEventListener('mousemove',mm);document.removeEventListener('mouseup',mu);}
+   document.addEventListener('mousemove',mm);document.addEventListener('mouseup',mu);
+ });
+});
+function generar(){
+ let css='';
+ document.querySelectorAll('.box').forEach(b=>{
+   css+=`.${b.id}{left:${parseFloat(b.style.left).toFixed(2)}%;top:${parseFloat(b.style.top).toFixed(2)}%;width:${parseFloat(b.style.width).toFixed(2)}%;height:${parseFloat(b.style.height).toFixed(2)}%}\n`;
+ });
+ document.getElementById('out').textContent=css;
+}
+</script>
+</body>
+</html>
